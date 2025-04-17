@@ -12,14 +12,15 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  liquibase:
+logging:
+  level:
+    root: info
+    com.example.internship: debug
+  pattern:
+    console: "%d{HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+
+springdoc:
+  api-docs:
     enabled: true
-    change-log: classpath:db/changelog/db.changelog-master.xml
-
-    logging:
-      level:
-        root: info
-        com.example.internship: debug  # Укажи свой package!
-      pattern:
-        console: "%d{HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
-
+  swagger-ui:
+    enabled: true
