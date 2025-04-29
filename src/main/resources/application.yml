@@ -5,6 +5,7 @@ spring:
     password: 050725500261
     driver-class-name: org.postgresql.Driver
 
+
   jpa:
     hibernate:
       ddl-auto: validate
@@ -24,3 +25,14 @@ springdoc:
     enabled: true
   swagger-ui:
     enabled: true
+  spring:
+    security:
+      oauth2:
+        resourceserver:
+          jwt:
+            issuer-uri: http://localhost:8080/realms/myrealm
+keycloak:
+  auth-server-url: http://localhost:8080/realms/myrealm
+  realm: myrealm
+  client-id: my-client-id
+  client-secret: my-client-secret
